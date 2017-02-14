@@ -247,9 +247,11 @@ API.prototype.setIgnoreTransaction = function setIgnoreTransaction(ignored) {
  * @param {Error}  error            The error to be traced.
  * @param {object} customParameters Any custom parameters to be displayed in
  *                                  the New Relic UI.
- * @param {Boolean} [stopErrorHandling] Whether stop auto error handling after we notice user error
+ * @param {Boolean} [stopErrorHandling] Whether stop auto error handling after
+ *                                  we notice user error
  */
-API.prototype.noticeError = function noticeError(error, customParameters, stopErrorHandling) {
+API.prototype.noticeError = function noticeError(error, customParameters,
+                                                 stopErrorHandling) {
   var metric = this.agent.metrics.getOrCreateMetric(
     NAMES.SUPPORTABILITY.API + '/noticeError'
   )
